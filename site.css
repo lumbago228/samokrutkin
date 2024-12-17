@@ -1,27 +1,32 @@
-﻿.title-stroke {
-    position: relative;
-    font-size: 3.5em;
-    font-weight: bold;
-    text-align: center;
-    margin: 30px 0;
+.underline-button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+   transition: color 0.3s ease;
     color: #333;
-    text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff; /* Белая обводка */
-    transition: color 0.3s ease;
-    animation: slideUp 1s ease-in-out;
+}
+.underline-button:hover{
+   color: #3498db;
 }
 
-    .title-stroke:hover {
-        color: #3498db; /* Меняем цвет при наведении */
-    }
-
-@keyframes slideUp {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+.underline-button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3498db;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+.underline-button:hover::before{
+    transform: scaleX(1);
 }
