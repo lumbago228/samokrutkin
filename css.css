@@ -1,184 +1,237 @@
-﻿/* Общие стили */
 body {
-    font-family: sans-serif;
+    background-color: white;
+} 
+
+
+
+
+
+.animated-heading {
+    font-family: 'Playfair Display', serif; /* Элегантный шрифт */
+    font-size: 4.5em;
+    font-weight: 700;
+    color: #3;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Скрываем анимацию полосы */
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+    .animated-heading::before {
+        content: '';
+        position: absolute;
+        top: 5%;
+        left: -100%; /* Позиция до анимации */
+        width: 0%;
+        height: 3px;
+        background-color: #e44d26; /* Цвет полосы */
+        transform: translateY(-50%); /* Выравнивание по середине */
+        animation: slideIn 1.5s ease-out forwards; /* Анимация */
+    }
+
+    .animated-heading::after {
+        content: '';
+        position: absolute;
+        top: 5%;
+        right: -100%; /* Позиция до анимации */
+        width: 100%;
+        height: 2px;
+        background-color: #e44d26; /* Цвет полосы */
+        transform: translateY(-50%); /* Выравнивание по середине */
+        animation: slideInRight 1.5s ease-out forwards; /* Анимация */
+    }
+
+@keyframes slideIn {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        right: -100%;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+}
+
+
+
+
+.secondary-nav {
+    background-color: #f8f8f8; /* Светло-серый фон */
+    padding: 10px 0; /* Отступы сверху и снизу */
+    font-size: 14px; /* Размер шрифта */
+    border-bottom: 1px solid #eee; /* Тонкая линия снизу */
+}
+
+.secondary-nav-list {
+    display: flex; /* Используем flexbox для выравнивания */
+    justify-content: center; /* Выравнивание по центру */
+    list-style: none; /* Убираем маркеры списка */
     margin: 0;
     padding: 0;
-    line-height: 1.6;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-a {
-    text-decoration: none;
-    color: #333;
-}
-
-.btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block; /* Для корректного отображения */
-}
-
-    .btn:hover {
-        background-color: #0056b3;
+    .secondary-nav-list li {
+        margin: 0 15px; /* Отступы между пунктами */
     }
 
-/* Шапка */
-header {
-    background-color: #f8f9fa;
-    padding: 10px 0;
-}
-
-    header .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .secondary-nav-list a {
+        text-decoration: none; /* Убираем подчеркивание ссылок */
+        color: #555; /* Цвет текста */
+        transition: color 0.3s ease; /* Плавный переход цвета при наведении */
     }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-}
-
-    .logo img {
-        height: 40px;
-        margin-right: 10px;
-    }
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-    header nav ul li {
-        display: inline;
-        margin-left: 20px;
-    }
-
-        header nav ul li a {
-            color: #333;
+        .secondary-nav-list a:hover {
+            color: #e44d26; /* Красный цвет при наведении */
         }
 
-            header nav ul li a:hover {
-                color: #007bff;
-            }
 
-/* Герой */
-.hero {
-    background-color: #e9ecef;
-    text-align: center;
-    padding: 100px 0;
+
+
+<!DOCTYPE html >
+<html >
+<head >
+<title > Анимированные категории</title >
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+<style >
+body {
+    font-family: 'Open Sans', sans-serif; /* Шрифт */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-    .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 20px;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-        margin-bottom: 30px;
-    }
-
-
-/* Товары */
-.products {
-    padding: 50px 0;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.product {
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-}
-
-    .product img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 15px;
-    }
-
-    .product h3 {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-    }
-
-/* О нас */
-.about {
-    background-color: #f8f9fa;
-    padding: 50px 0;
-}
-
-/* Контакты */
-.contact {
-    padding: 50px 0;
-}
-
-/* Подвал */
-footer {
-    background-color: #343a40;
-    color: white;
-    text-align: center;
+.secondary-nav {
+    background-color: #fff;
     padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
 }
 
-/* Анимация (пример) */
-.hero h1 {
-    animation: fadeInDown 1s ease-out;
+.secondary-nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
+    .secondary-nav-list li {
+        margin: 0 20px;
+        position: relative;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.product img {
-    transition: transform 0.3s ease;
-}
-
-.product:hover img {
-    transform: scale(1.05);
-}
-
-/* Добавьте адаптивность */
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-    }
-
-    header .container {
-        flex-direction: column;
-    }
-
-    .logo {
-        margin-bottom: 10px;
-    }
-
-    header nav ul li {
-        margin: 5px 0;
+    .secondary-nav-list a {
+        text-decoration: none;
+        color: #555;
+        font-size: 1.2em;
+        font-weight: 600;
+        padding: 10px 20px;
         display: block;
     }
+
+        .secondary-nav-list a:hover {
+            color: #e44d26;
+        }
+
+    .secondary-nav-list li .slider-container {
+        position: absolute;
+        left: 0;
+        bottom: -10px; /* Подвинуть ниже текста */
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+        transform: translateY(10px); /* Изначально скрыт */
+        transition: transform 0.3s ease;
+    }
+
+    .secondary-nav-list li:hover .slider-container {
+        transform: translateY(0);
+    }
+
+    .secondary-nav-list li .slider {
+        display: flex;
+        width: 400%;
+        animation: slide 10s linear infinite;
+        transition: transform 0.5s; /* Плавность при наведении */
+    }
+
+    .secondary-nav-list li .slide {
+        flex: 0 0 25%;
+        width: 200px;
+        height: 100px;
+        overflow: hidden;
+    }
+
+        .secondary-nav-list li .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+            .secondary-nav-list li .slide img:hover {
+                opacity: 0.7;
+            }
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+    /* Сдвиг слайдов */
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-75%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
+
+
+
+</style >
+</head >
+<body >
+<div class="secondary-nav" >
+<ul class="secondary-nav-list" >
+<li >
+<a href="#" > Футболки</a >
+<div class="slider-container" >
+<div class="slider" >
+<div class="slide" > <img src="https://via.placeholder.com/200x150/e74c3c/fff/?text=Футболка+1" alt="Футболка 1" > </div >
+<div class="slide" > <img src="https://via.placeholder.com/200x150/2980b9/fff/?text=Футболка+2" alt="Футболка 2" > </div >
+<div class="slide" > <img src="https://via.placeholder.com/200x150/8e44ad/fff/?text=Футболка+3" alt="Футболка 3" > </div >
+</div >
+</div >
+</li >
+<!-- Добавьте другие категории -->
+</ul >
+</div >
+
+
+</body >
+</html >

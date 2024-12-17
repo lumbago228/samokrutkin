@@ -1,21 +1,7 @@
-﻿samokrutkin - store /
-├── index.html
-├── css /
-│   └── style.css
-├── js /
-│   └── script.js
-├── img /
-│   ├── logo.png
-│   ├── product1.jpg
-│   ├── product2.jpg
-│   └── ...
+import datetime
 
-document.addEventListener('DOMContentLoaded', function () {
-    const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
+d = datetime.datetime.now()
+print('*** WebSite ***')
+html_content = f"<h1 style='color:azure'>Сегодня {d}</h1>"
 
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            alert('Товар добавлен в корзину! (Эта функция пока не реализована полностью)');
-        });
-    });
-});
+
