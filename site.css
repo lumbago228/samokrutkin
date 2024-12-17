@@ -1,32 +1,38 @@
-.underline-button {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 10px;
-  font-size: 16px;
-  text-decoration: none;
-  border: none;
-  background: none;
-  cursor: pointer;
-   transition: color 0.3s ease;
-    color: #333;
-}
-.underline-button:hover{
-   color: #3498db;
+.cube-container {
+  width: 200px;
+  height: 200px;
+  margin: 100px auto;
+  perspective: 1000px;
 }
 
-.underline-button::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #3498db;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 10s linear infinite;
 }
-.underline-button:hover::before{
-    transform: scaleX(1);
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  background-color: rgba(52, 152, 219, 0.7);
+    color: white;
+    border: 1px solid #fff;
+}
+.front {transform: translateZ(100px);}
+.back {transform: rotateY(180deg) translateZ(100px);}
+.right {transform: rotateY(90deg) translateZ(100px);}
+.left {transform: rotateY(-90deg) translateZ(100px);}
+.top {transform: rotateX(90deg) translateZ(100px);}
+.bottom {transform: rotateX(-90deg) translateZ(100px);}
+
+@keyframes rotateCube {
+    0% {transform: rotateX(0) rotateY(0);}
+    100% {transform: rotateX(360deg) rotateY(360deg);}
 }
