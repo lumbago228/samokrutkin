@@ -1,5 +1,8 @@
-const buttonUnderline = document.querySelector('.underline-button');
+document.addEventListener('DOMContentLoaded', function() {
+    const parallaxContainer = document.querySelector('.parallax-container');
 
-buttonUnderline.addEventListener('click', function () {
-  alert("Кнопка нажата!");
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        parallaxContainer.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+    });
 });
