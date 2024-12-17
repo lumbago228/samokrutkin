@@ -1,237 +1,83 @@
 ﻿body {
-    background-color: white;
-}
-
-
-
-
-
-.animated-heading {
-    font-family: 'Playfair Display', serif; /* Элегантный шрифт */
-    font-size: 4.5em;
-    font-weight: 700;
-    color: #3;
-    text-align: center;
-    position: relative;
-    overflow: hidden; /* Скрываем анимацию полосы */
-    margin-bottom: 30px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-    .animated-heading::before {
-        content: '';
-        position: absolute;
-        top: 5%;
-        left: -100%; /* Позиция до анимации */
-        width: 0%;
-        height: 3px;
-        background-color: #e44d26; /* Цвет полосы */
-        transform: translateY(-50%); /* Выравнивание по середине */
-        animation: slideIn 1.5s ease-out forwards; /* Анимация */
-    }
-
-    .animated-heading::after {
-        content: '';
-        position: absolute;
-        top: 5%;
-        right: -100%; /* Позиция до анимации */
-        width: 100%;
-        height: 2px;
-        background-color: #e44d26; /* Цвет полосы */
-        transform: translateY(-50%); /* Выравнивание по середине */
-        animation: slideInRight 1.5s ease-out forwards; /* Анимация */
-    }
-
-@keyframes slideIn {
-    0% {
-        left: -100%;
-    }
-
-    100% {
-        left: 0;
-    }
-}
-
-@keyframes slideInRight {
-    0% {
-        right: -100%;
-    }
-
-    100% {
-        right: 0;
-    }
-}
-
-}
-
-
-
-
-.secondary-nav {
-    background-color: #f8f8f8; /* Светло-серый фон */
-    padding: 10px 0; /* Отступы сверху и снизу */
-    font-size: 14px; /* Размер шрифта */
-    border-bottom: 1px solid #eee; /* Тонкая линия снизу */
-}
-
-.secondary-nav-list {
-    display: flex; /* Используем flexbox для выравнивания */
-    justify-content: center; /* Выравнивание по центру */
-    list-style: none; /* Убираем маркеры списка */
-    margin: 0;
-    padding: 0;
-}
-
-    .secondary-nav-list li {
-        margin: 0 15px; /* Отступы между пунктами */
-    }
-
-    .secondary-nav-list a {
-        text-decoration: none; /* Убираем подчеркивание ссылок */
-        color: #555; /* Цвет текста */
-        transition: color 0.3s ease; /* Плавный переход цвета при наведении */
-    }
-
-        .secondary-nav-list a:hover {
-            color: #e44d26; /* Красный цвет при наведении */
-        }
-
-
-
-
-<!DOCTYPE html >
-<html >
-<head >
-<title > Анимированные категории</title >
-<meta name="viewport" content="width=device-width, initial-scale=1.0" >
-<style >
-body {
-    font-family: 'Open Sans', sans-serif; /* Шрифт */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
 
-.secondary-nav {
-    background-color: #fff;
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
-    overflow: hidden;
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
 }
 
-.secondary-nav-list {
-    display: flex;
-    justify-content: center;
+nav ul {
     list-style: none;
-    margin: 0;
     padding: 0;
 }
 
-    .secondary-nav-list li {
-        margin: 0 20px;
-        position: relative;
-        text-align: center;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+    nav ul li {
+        display: inline;
+        margin: 0 15px;
     }
 
-    .secondary-nav-list a {
-        text-decoration: none;
-        color: #555;
-        font-size: 1.2em;
-        font-weight: 600;
-        padding: 10px 20px;
-        display: block;
-    }
-
-        .secondary-nav-list a:hover {
-            color: #e44d26;
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
         }
 
-    .secondary-nav-list li .slider-container {
-        position: absolute;
-        left: 0;
-        bottom: -10px; /* Подвинуть ниже текста */
-        width: 100%;
-        height: 100px;
-        overflow: hidden;
-        transform: translateY(10px); /* Изначально скрыт */
-        transition: transform 0.3s ease;
+.animated-text {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
 
-    .secondary-nav-list li:hover .slider-container {
-        transform: translateY(0);
-    }
-
-    .secondary-nav-list li .slider {
-        display: flex;
-        width: 400%;
-        animation: slide 10s linear infinite;
-        transition: transform 0.5s; /* Плавность при наведении */
-    }
-
-    .secondary-nav-list li .slide {
-        flex: 0 0 25%;
-        width: 200px;
-        height: 100px;
-        overflow: hidden;
-    }
-
-        .secondary-nav-list li .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: opacity 0.3s ease;
-        }
-
-            .secondary-nav-list li .slide img:hover {
-                opacity: 0.7;
-            }
-
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-
-    25% {
-        transform: translateX(-25%);
-    }
-    /* Сдвиг слайдов */
-    50% {
-        transform: translateX(-50%);
-    }
-
-    75% {
-        transform: translateX(-75%);
-    }
-
-    100% {
-        transform: translateX(0);
+    to {
+        opacity: 1;
     }
 }
 
+main {
+    padding: 20px;
+}
 
+.product {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 15px 0;
+    padding: 15px;
+    transition: transform 0.3s;
+}
 
-</style >
-</head >
-<body >
-<div class="secondary-nav" >
-<ul class="secondary-nav-list" >
-<li >
-<a href="#" > Футболки</a >
-<div class="slider-container" >
-<div class="slider" >
-<div class="slide" > <img src="https://via.placeholder.com/200x150/e74c3c/fff/?text=Футболка+1" alt="Футболка 1" > </div >
-<div class="slide" > <img src="https://via.placeholder.com/200x150/2980b9/fff/?text=Футболка+2" alt="Футболка 2" > </div >
-<div class="slide" > <img src="https://via.placeholder.com/200x150/8e44ad/fff/?text=Футболка+3" alt="Футболка 3" > </div >
-</div >
-</div >
-</li >
-<!-- Добавьте другие категории -->
-</ul >
-</div >
+    .product:hover {
+        transform: scale(1.05);
+    }
 
+.buy-button {
+    background: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
 
-</body >
-</html >
+    .buy-button:hover {
+        background: #218838;
+        transform: scale(1.1);
+    }
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+}
+
+Найти еще
