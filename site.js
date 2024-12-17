@@ -1,9 +1,5 @@
-﻿// Простой скрипт для демонстрации анимации кнопок
-document.querySelectorAll('.buy-button').forEach(button => {
-    button.addEventListener('click', () => {
-        alert('Товар добавлен в корзину!');
-    });
+const buttonUnderline = document.querySelector('.underline-button');
+
+buttonUnderline.addEventListener('click', function () {
+  alert("Кнопка нажата!");
 });
-
-
-
