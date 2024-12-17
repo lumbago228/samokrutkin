@@ -4,3 +4,6 @@ document.querySelectorAll('.buy-button').forEach(button => {
         alert('Товар добавлен в корзину!');
     });
 });
+
+
+
