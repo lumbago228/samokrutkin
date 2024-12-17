@@ -1,8 +1,58 @@
-<div class="parallax-container">
-  <div class="parallax-background"></div>
-  <div class="content">
-    <!-- Содержание вашей страницы -->
-    <h1>Samokrutkin Store</h1>
-     <p>Текст на фоне с параллаксом</p>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эффектная кнопка</title>
+    <style>
+        .fancy-button {
+            background-color: #00bcd4;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
+             
+        }
+        
+        .fancy-button:hover {
+              background-color: #0097a7; /* Более темный оттенок при наведении */
+             
+        }
+
+        .fancy-button span {
+           position: relative;
+           z-index: 1; /* Обеспечивает текст всегда сверху эффекта */
+        }
+         .fancy-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #4fc3f7, #00bcd4); /* Градиент */
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+            transform-origin: left;
+            z-index: 0;
+          
+        }
+
+        .fancy-button:hover::before {
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+<body>
+    <button class="fancy-button"><span>Нажми меня</span></button>
+</body>
+</html>
